@@ -1,0 +1,11 @@
+artifacts
+cache
+node_modules
+bin
+.env
+.openzeppelin
+ethereum-package
+archive
+diamond_store
+network_login.sh
+.nvm
