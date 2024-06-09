@@ -1,0 +1,34 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+library TestLib {
+    bytes32 constant DIAMOND_STORAGE_POSITION =
+        keccak256("diamond.standard.Test.storage");
+
+    struct TestStorage {
+        string name;
+        string symbol;
+        uint256 totalSupply;
+        uint8 decimals;
+        mapping(address => uint256) balanceOf;
+        mapping(address => undefined) allowance;
+        mapping(address => bool) isFeeExempt;
+        mapping(address => bool) isWhitelisted;
+        mapping(bytes32 => bool) validCalls;
+        address owner;
+        address feeManager;
+        uint256 buyFee;
+        uint256 sellFee;
+        bool inTransaction;
+        uint256 windowStart;
+        uint256 windowEnd;
+    }
+
+    function diamondStorage() internal pure returns (TestStorage storage ds) {
+        bytes32 position = DIAMOND_STORAGE_POSITION;
+        assembly {
+            ds.slot := position
+        }
+    }
+}

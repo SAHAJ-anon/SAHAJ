@@ -6,6 +6,5 @@ bin
 .openzeppelin
 ethereum-package
 archive
-diamond_store
 network_login.sh
 .nvm
