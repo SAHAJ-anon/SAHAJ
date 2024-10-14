@@ -15,10 +15,10 @@ describe('Diamond Deployment and Facet Integration', function () {
     let ownershipFacet;
     let contractOwner;
     let totalGasUsed;
-    // const facetsFolderPath = "../contracts/Examplefacets";
+
     const facetsFolderPath = "../contracts/Aierifyfacets";
-    // const facetsFolderPath = "../contracts/ABRAfacets";
-    
+
+
     before(async function () {
         const accounts = await ethers.getSigners();
         contractOwner = accounts[0];
